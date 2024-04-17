@@ -23,6 +23,8 @@ const handleCreate = () => {
 
   handleDestroy();
 
+  const boxes = [];
+
   for (let i = 0; i < numberOfBoxes; i++) {
     const box = document.createElement('div');
     box.style.width = 30 + 10 * i + 'px';
@@ -30,8 +32,10 @@ const handleCreate = () => {
 
     box.style.backgroundColor = getRandomHexColor();
 
-    boxesContainer.append(box);
+    boxes.push(box)
   }
+
+  boxesContainer.append(...boxes);
 
   input.value = '';
 };

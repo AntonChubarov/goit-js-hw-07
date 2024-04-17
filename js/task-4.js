@@ -15,6 +15,15 @@ form.addEventListener('submit', event => {
     return;
   }
 
-  console.log(`Email: ${email}, Password: ${password}`);
+  const formData = new FormData(form);
+
+  const formObject = {};
+
+  formData.forEach(function(value, key) {
+    formObject[key] = value;
+  });
+
+  console.log(formObject);
+
   form.reset();
 });

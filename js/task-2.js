@@ -18,6 +18,8 @@ const images = [
 
 const gallery = document.querySelector('.gallery');
 
+const galleryListItems = [];
+
 for (const image of images) {
   const galleryListItem = document.createElement('li');
   const imageElement = document.createElement('img');
@@ -25,5 +27,7 @@ for (const image of images) {
   imageElement.alt = image.alt;
   galleryListItem.append(imageElement);
 
-  gallery.append(galleryListItem);
+  galleryListItems.push(galleryListItem);
 }
+
+gallery.append(...galleryListItems);
